@@ -1,6 +1,6 @@
 {% set name = "lpdr" %}
-{% set version = 0.2a20201028 %}
-{% git_tag = ef43c83b07c17c2e2c4dfb2c58f44abe688e424b %}
+{% set version = "0.2a20201028" %}
+{% git_tag = "ef43c83b07c17c2e2c4dfb2c58f44abe688e424b" %}
 
 
 package:
