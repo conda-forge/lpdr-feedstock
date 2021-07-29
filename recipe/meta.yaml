@@ -1,5 +1,6 @@
 {% set name = "lpdr" %}
-{% set version = 0.1 %}
+{% set version = "0.2a20201028" %}
+{% set git_tag = "ef43c83b07c17c2e2c4dfb2c58f44abe688e424b" %}
 
 
 package:
@@ -7,11 +8,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3850a78ef1b222fb438aac9ae44b669d1fe5f99019e7e7045f49839300f08904
+  url: https://github.com/szachovy/lpdr/archive/{{ git_tag }}.tar.gz
+  sha256: a49ec0134f8ef832cd67e75082f2214f656f571a2916f7692e7333528a5b137c
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -24,7 +25,8 @@ requirements:
     - numpy >=1.17.4
     - opencv
     - pytesseract >=0.3.4
-    - python >=3.6
+    - python >=3.7
+    - tensorflow
 
 test:
   imports:
@@ -39,5 +41,5 @@ about:
 extra:
   recipe-maintainers:
     - mxr-conda
-    - rluria14
     - oblute
+    - JennaLipscomb
