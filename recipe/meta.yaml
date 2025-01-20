@@ -12,23 +12,25 @@ source:
   sha256: a49ec0134f8ef832cd67e75082f2214f656f571a2916f7692e7333528a5b137c
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - keras >=2.3.1
     - numpy >=1.17.4
     - opencv
     - pytesseract >=0.3.4
-    - python >=3.7
+    - python >={{ python_min }}
     - tensorflow
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - lpdr
 
